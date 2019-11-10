@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TypeBeater</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="img/images.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-light text-dark">
+  <header class="bg-primary text-center text-light p-1 mb-md-5 mb-2">
+    <div class="logo d-flex m-1 flex-sm-row justify-content-center align-items-center">
+      <img src="img/images.png" alt="" class="rounded-circle ">
+      <h1 class="display-2 font-weight-bold">TypeBeater</h1>
+    </div>
+  </header>
+
+  <div class="container text-center">
+    <!-- Word & Input -->
+    <div class="row justify-content-center align-items-center">
+      <div id="box" class="col-md-8 mx-auto p-5 rounded">
+        <h1 class="d-inline-block"><span id="levelmessage" class="badge badge-success"></span> </h1>
+        <h2 class="display-2 font-weight-bold mb-5 mt-3" id="current-word"></h2>
+        <input type="text" class="form-control form-control-lg" placeholder="Start typing..." id="word-input" autofocus>
+        <h4 class="mt-3" id="message"></h4>
+
+        <!-- Time & Score Columns -->
+        <div class="row mt-5 text-dark">
+          <div class="col-md-4 ">
+            <h3 class="bg-warning rounded p-2"><i class="fa fa-clock-o "></i> Timer :
+              <span id="time">0</span>
+            </h3>
+          </div>
+          <div class="col-md-4">
+            <h3 class=" bg-info rounded p-2">Score:
+              <span id="score">0</span>
+            </h3>
+          </div>
+          <div class="col-md-4">
+            <h3 class=" bg-success rounded p-2"><i class="fa fa-trophy"></i> Top :
+              <span id="highscore">0</span>
+            </h3>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center bg-primary p-3 text-light mt-5">
+    <p>Designed and Developed by vishal &copy; 2019</p>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
