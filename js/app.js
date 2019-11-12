@@ -1,5 +1,5 @@
 window.addEventListener('load', init);
-// Available Levels
+
 const levels = {
   easy: 6,
   medium: 4,
@@ -7,14 +7,14 @@ const levels = {
   difficult: 1
 };
 
-// To change level
+
 let currentLevel = levels.easy;
 let time = currentLevel;
 let score = 0;
 let isPlaying;
 let highscore = 0;
 
-// DOM Elements
+
 const wordInput = document.querySelector('#word-input');
 const currentWord = document.querySelector('#current-word');
 const scoreDisplay = document.querySelector('#score');
@@ -47,7 +47,7 @@ const words = [
   'runaway',
   'joke',
   'developer',
-  'establishment',
+  'establish',
   'hero',
   'javascript',
   'nutrition',
@@ -61,7 +61,7 @@ const words = [
   'magic',
   'master',
   'sahebrao',
-  'MuttonDinner',
+  'Dinner',
   'space',
   'definition',
   'facebook',
@@ -70,10 +70,45 @@ const words = [
   'lavekarsir',
   'Builder',
   'schiffer',
-  'Leopard'
+  'Leopard',
+  'Live',
+  'Server',
+  'family',
+  'kingdom',
+  'king',
+  'java',
+  'python',
+  'C',
+  'C++',
+  'React',
+  'Angular',
+  'Django',
+  'Node',
+  'Web',
+  'Ghata',
+  'Psych',
+  'Assignment',
+  'only',
+  'information',
+  'Technology',
+  'Sggs',
+  'Nanded',
+  'Maharashtra',
+  'Marathi',
+  'language',
+  'icon',
+  'motivation',
+  'Shaktiman',
+  'zero',
+  'shunya',
+  'Junior-G',
+  'Doremon',
+  'Nobita',
+  'ninja',
+  'Jiyaan'
 ];
 
-// Initialize Game
+
 function init() {
   showWord(words);
   wordInput.addEventListener('input', startMatch);
@@ -81,7 +116,7 @@ function init() {
   setInterval(checkStatus, 50);
 }
 
-// Start match
+
 function startMatch() {
   levelNumber(currentLevel);
   if (matchWords()) {
@@ -92,11 +127,11 @@ function startMatch() {
     score++;
   }
 
-  if (score > 35) {
+  if (score > 40) {
     currentLevel = levels.difficult;
-  } else if (score > 22) {
+  } else if (score > 28) {
     currentLevel = levels.hard;
-  } else if (score > 10) {
+  } else if (score > 15) {
     currentLevel = levels.medium;
   }
 
