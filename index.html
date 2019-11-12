@@ -5,9 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="google-site-verification" content="MNzal0eBD7OcBcZi6xQjLhd3LjcyEUDJc-i5DmOj5JA" />
+  <meta name="description" content="TypeBeater is a simple speed typing Game, Type words and Have fun.">
+  <meta name="keywords" content="TypeBeater, Wordbeater,vishal ibitwar,vishalibitwar,typing game">
   <title>TypeBeater</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Wallpoet&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="img/images.png">
   <link rel="stylesheet" href="css/style.css">
@@ -15,19 +19,20 @@
 
 <body class="bg-light text-dark">
   <header class="bg-primary text-center text-light p-1 mb-md-5 mb-2">
-    <div class="logo d-flex m-1 flex-sm-row justify-content-center align-items-center">
-      <img src="img/images.png" alt="" class="rounded-circle ">
-      <h1 class="display-2 font-weight-bold">TypeBeater</h1>
+    <div class="logo d-flex m-1 flex-row justify-content-center align-items-center">
+      <img src="img/images.png" alt="logo" class="rounded-circle ">
+      <h1 class="display-2 heading font-weight-bold" style= "font-family: 'Wallpoet', cursive;" >TypeBeater</h1>
     </div>
   </header>
 
-  <div class="container text-center">
+  <div class="container mt-5 text-center">
     <!-- Word & Input -->
     <div class="row justify-content-center align-items-center">
-      <div id="box" class="col-md-8 col-12 mx-auto p-5 rounded">
+      <div id="box" class="col-md-8 mx-auto p-5 rounded">
         <h1 class="d-inline-block"><span id="levelmessage" class="badge badge-success"></span> </h1>
-        <h2 class="display-2 font-weight-bold mb-5 mt-3" id="current-word"></h2>
-        <input type="text" class="form-control form-control-lg" placeholder="Start typing..." id="word-input" autofocus>
+        <h2 class="display-2 mobile font-weight-bold mb-5 mt-3" id="current-word">New Game!!</h2>
+        <input type="text" class="form-control form-control-lg" placeholder="Type above text..." id="word-input"
+          autofocus>
         <h4 class="mt-3" id="message"></h4>
 
         <!-- Time & Score Columns -->
@@ -47,16 +52,14 @@
               <span id="highscore">0</span>
             </h3>
           </div>
-
         </div>
       </div>
     </div>
   </div>
 
-  <footer class="text-center bg-primary fixed-bottom p-3 text-light mt-5">
-    <p>Designed and Developed by vishal &copy; 2019</p>
+  <footer class="text-center bg-primary  p-3 text-light mt-5">
+    <p> Made With <span><i class="fa fa-heart heart text-danger"></i></span> by Vishal</p>
   </footer>
   <script src="js/app.js"></script>
 </body>
-
 </html>
