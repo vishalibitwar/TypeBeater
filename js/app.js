@@ -3,7 +3,7 @@ window.addEventListener('load', init);
 const levels = {
   easy: 6,
   medium: 4,
-  hard: 2,
+  hard: 3,
   difficult: 1
 };
 
@@ -23,6 +23,10 @@ const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
 const hscore = document.querySelector('#highscore');
 const levelmessage = document.getElementById('levelmessage');
+const animateTimer = document.getElementById('animateTimer');
+const animateHighScore = document.getElementById('animateHighScore');
+const animateScore = document.getElementById('animateScore');
+
 
 const words = [
   'VISHAL',
@@ -105,7 +109,11 @@ const words = [
   'Doremon',
   'Nobita',
   'ninja',
-  'Jiyaan'
+  'Jiyaan',
+  'jadu',
+  'Shizuka',
+  'Suneo',
+  'Dorami'
 ];
 
 
@@ -129,9 +137,9 @@ function startMatch() {
 
   if (score > 40) {
     currentLevel = levels.difficult;
-  } else if (score > 28) {
+  } else if (score > 30) {
     currentLevel = levels.hard;
-  } else if (score > 15) {
+  } else if (score > 20) {
     currentLevel = levels.medium;
   }
 
@@ -164,7 +172,7 @@ function matchWords() {
 
 
 function showWord(words) {
-
+  animate(currentWord, 'jackInTheBox');
   const randIndex = Math.floor(Math.random() * words.length);
   currentWord.innerHTML = words[randIndex];
 }
@@ -188,25 +196,50 @@ function checkStatus() {
     if (score != -1) {
       localStorage.setItem('currentscore', score);
     }
-    message.innerHTML = 'Game Over!!!';
-    message.style.color = "red";
-    currentWord.innerHTML = 'New Game!!';
+
+    if (currentWord.innerHTML !== 'New Game!!') {
+      if (currentWord.textContent !== 'Game Over!!') {
+        animate(currentWord, 'bounceInRight');
+        animate(animateScore, 'bounceIn');
+
+      }
+      animate(animateTimer, 'shake');
+      currentWord.innerHTML = 'Game Over!!';
+
+      setTimeout(() => {
+        if (currentWord.innerHTML !== 'New Game!!')
+          animate(currentWord, 'swing');
+        currentWord.innerHTML = 'New Game!!';
+        wordInput.placeholder = 'Type New Game!! to start the game...';
+      }, 3000);
+
+    }
     currentLevel = levels.easy;
     setLocalStorage(score);
     score = -1;
   } else {
-    message.innerHTML = '';
+    wordInput.placeholder = 'Type above text...';
   }
 }
 
 function setLocalStorage(score) {
   highscore = localStorage.getItem('highscore');
   if (highscore < score) {
+    animate(animateHighScore, 'shake');
     localStorage.setItem('highscore', score);
   }
   hscore.innerHTML = localStorage.getItem('highscore');
 
 }
+
+
+function animate(element, animation) {
+  element.classList.add('animated', animation);
+  const wait = setTimeout(() => {
+    element.classList.remove('animated', animation);
+  }, 1000);
+}
+
 
 document.oncontextmenu = function () {
   return false;
